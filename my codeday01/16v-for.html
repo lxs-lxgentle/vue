@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 数组的方法：forEach filter map some every reduce find findIndex;
+    for 可以遍历数组或者对象
+    需要给谁重复渲染，就给谁加v-for
+     -->
+    <!-- 遍历数组：
+     v-for = 'item in 数组名' item遍历的每一项
+     v-for = '(item,index) in 数组名 '   -->
+    <!-- 遍历对象 v-for = '(value,prop) in 对象' value 属性值 prop属性名 -->
+    <div id="app">
+      <ul>
+        <li v-for="(item,index) in list1">{{item}}-{{index}}</li>
+      </ul>
+      <hr />
+      <ul>
+        <li v-for="item in list2">{{item}}</li>
+      </ul>
+      <hr />
+      <ul>
+        <li v-for="(item,index) in list2">{{index}}</li>
+      </ul>
+      <ul>
+        <li v-for="(value,prop) in obj">{{value}}</li>
+      </ul>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          list1: ["zf", "gy", "lb", "zy"],
+          list2: ["wtml", "apple", "org", "banner"],
+          obj: {
+            name: "sanyitai",
+            age: 18,
+            desc: "ggh",
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li v-for="item in studets" :key="item.id">
+          姓名:{{item.name}},年龄：{{item.age}},描述:{{item.desc}}
+        </li>
+      </ul>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          studets: [
+            { id: 1, name: "xiaoming", age: 18, desc: "keai" },
+            { id: 2, name: "xiaoming1", age: 19, desc: "keai1" },
+            { id: 3, name: "xiaoming2", age: 20, desc: "keai2" },
+            { id: 4, name: "xiaoming3", age: 21, desc: "keai3" },
+            { id: 5, name: "xiaoming4", age: 22, desc: "keai4" },
+          ],
+        },
+      });
+    </script>
+  </body>
+</html>

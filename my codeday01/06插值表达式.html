@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h2>{{msg}}</h2>
+      <h2>{{obj.name}}</h2>
+      <h2>{{obj.age}}</h2>
+      <h2>{{obj.desc}}</h2>
+      <h2>{{obj.name.toUpperCase()}}</h2>
+      <h2>{{obj.age>18? 'adult':"children"}}</h2>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+      //插值表达式：小胡子语法，
+      //作用：使用data中的数据，渲染视图
+      //语法
+      // {{msg}}
+      // {{obj.name}}
+      // {{msg.toUpperCase()}}
+      //注意：1.不是data的变量不能直接使用
+      //   2.在插值表达式中不能使用js语句，比如if for，
+      //3.不能在标签属性中使用插值表达式
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          msg: "enen",
+          money: 100,
+          house: "dabieshu",
+          obj: {
+            name: "didi",
+            age: 20,
+            desc: "cool",
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
