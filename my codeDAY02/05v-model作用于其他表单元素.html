@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{msg}}</p>
+      <input type="text" v-model="msg" value="123456" />
+      <hr />
+      <p>{{desc}}</p>
+      <textarea v-model="desc"></textarea>
+      <hr />
+      <p>{{hobbyId}}</p>
+      <select v-model="hobbyId">
+        <option value="1">吃饭</option>
+        <option value="2">睡觉</option>
+        <option value="3">打豆豆</option>
+      </select>
+      <hr />
+      <input type="checkbox" v-model="isSingle" checked />是否单身
+    </div>
+    <!-- 表单设置了v-model，会忽略默认的value checked等初始值
+    v-model作用于textarea select/option input：checkbox;双向绑定可以很方便的机型表单元素的设置和获取 -->
+    <script src="./vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          msg: "hello vue",
+          desc: "弟弟来王者啊",
+          hobbyId: 3,
+          isSingle: false,
+        },
+      });
+    </script>
+  </body>
+</html>

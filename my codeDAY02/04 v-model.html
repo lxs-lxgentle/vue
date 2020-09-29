@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- v-model的作用：给表单元素赋值，实现数据的双向绑定。
+    给不同的表单设置，不同的表单设置不同的属性。input：text（value） input：checkout（value）textarea（value）；
+    视图变化数据变化，数据变化则视图变化 -->
+    <!-- v-model = '值' -->
+    <div id="app">
+      <input type="text" v-model="msg" />
+      <hr />
+      用户名:<input type="text" v-model="username" /> <br />
+      <br />
+      密码:<input type="password" v-model="password" /><br /><br />
+      <button>登录</button>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          username: "",
+          password: "",
+        },
+      });
+    </script>
+  </body>
+</html>

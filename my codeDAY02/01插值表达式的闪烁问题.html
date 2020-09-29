@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{msg}}</h1>
+      <h1>{{msg}}</h1>
+      <h1>{{msg}}</h1>
+      <h1>{{msg}}</h1>
+      <h1>{{msg}}</h1>
+      <h1>{{msg}}</h1>
+      <h1>{{msg}}</h1>
+      <h1>{{msg}}</h1>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+      //v-cloak 没什么用，基于webpack环境都在内存中编译的，所以不存在闪烁问题
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          msg: "我是弟弟",
+        },
+      });
+    </script>
+  </body>
+</html>

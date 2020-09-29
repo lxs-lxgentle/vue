@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- 
+          <h1>{{ msg.split('').reverse().join('') }}</h1>
+          <h1>{{ msg }}</h1> 
+        -->
+
+      <h1>{{ reverseMsgFn() }}</h1>
+      <h1>{{ reverseMsgFn() }}</h1>
+      <h1>{{ reverseMsgFn() }}</h1>
+      <h1>{{ reverseMsgFn() }}</h1>
+      <h1>{{ reverseMsgFn() }}</h1>
+      <hr />
+      <h1>{{ reverseMsg }}</h1>
+      <h1>{{ reverseMsg }}</h1>
+      <h1>{{ reverseMsg }}</h1>
+      <h1>{{ reverseMsg }}</h1>
+      <h1>{{ reverseMsg }}</h1>
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+      //优点：1.便于维护。2.计算属性有缓存，会将计算结果存起来，如果下一次还需要同一个计算属性，不需要重复计算，直接读取缓存。
+      //3.依赖的值如果发生变化，计算属性会重新计算，并再次进行缓存。
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          msg: "hello vue",
+        },
+        methods: {
+          reverseMsgFn() {
+            // return this.msg.split("").reverse().join("");
+            return this.msg.split("").reverse().join("");
+          },
+        },
+        computed: {
+          reverseMsg() {
+            // return this.msg.split("").reverse().join("");
+            return this.msg.split("").reverse().join("");
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
