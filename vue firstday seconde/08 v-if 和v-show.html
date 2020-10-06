@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <div v-if="flag">wsnr</div>
+      <div v-show="flag">wsnr</div>
+    </div>
+
+    <script src="./vue.js"></script>
+    <script>
+      //v-if='布尔值',动态删除和添加 v-show是控制display：none 频繁切换用v-show,广告则用v-if
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          msg: "hello vue",
+          flag: true,
+        },
+      });
+    </script>
+  </body>
+</html>

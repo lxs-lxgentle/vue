@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <a href="http://www.baidu.com" @click="fn1(100,$event)">qubaidu</a>
+      <div @click="fatherFn">
+        <a href="http://www.baidu.com" @click.stop.prevent="fn2(100)">qbd</a>
+      </div>
+    </div>
+
+    <script src="./vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          msg: "hello vue",
+        },
+        methods: {
+          fn1(num, e) {
+            e.preventDefault();
+          },
+          fn2(num) {
+            console.log(num);
+            alert("bdj");
+          },
+          fatherFn() {
+            alert("fhz zx");
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

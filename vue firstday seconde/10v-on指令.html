@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <button v-on:click="isShow =!isShow">h1 de xisnhiyicnang</button>
+      <button v-on:click="fn1">methodde hanshu</button>
+      <button v-on:click="fn2(100)">zhidinghanshuchuancan</button> -->
+      <button @click="isShow = !isShow">h1 de hs</button>
+      <button @click="fn1">meothods de hs</button>
+      <button @click="fn2(100)">chuancanhanshu</button>
+      <h1 v-show="isShow">neirong</h1>
+    </div>
+
+    <script src="./vue.js"></script>
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          msg: "hello vue",
+          isShow: true,
+        },
+        methods: {
+          fn1() {
+            this.isShow = !this.isShow;
+          },
+          fn2(num) {
+            console.log(num);
+          },
+          fn3() {
+            alert("sbhr");
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
