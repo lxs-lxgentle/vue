@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script src="./node_modules/axios/dist/axios.js"></script>
+    <script>
+      //如果发送请求很简单,可以使用简写.
+      // axios.get(url).then(成功的函数);
+      // axios.get(url,{
+      //     params:{...}
+      // }).then(成功的函数);
+      //   post put patch 相似
+      // axios.post(url,data).then('成功的函数')
+      //发送get请求，获取全部数据
+      //   axios
+      //     .get("http://localhost:3000/list")
+      //     .then((res) => console.log(res.data));
+      //   axios
+      //     .get("http://localhost:3000/list?name_like=车")
+      //     .then((res) => console.log(res.data));
+      // axios.get('http://localhost:3000/list',{
+      //     params:{
+      //         name_like ='车',
+      //     }
+      // }).then(res => console.log(res.data))
+      //   axios
+      //     .post("http://localhost:3000/list", {
+      //       name: "缆车",
+      //       price: 1,
+      //     })
+      //     .then((res) => {
+      //       console.log(添加完成);
+      //     });
+      //4删除操作
+      //   const id = 4;
+      //   axios
+      //     .delete(`http://localhost:3000/list/${id}`)
+      //     .then((res) => console.log("删除成功"));
+      //5全部修改，两个属性都修改。put
+      // const id = 5;
+      // axios
+      //   .put(`http://locaihost:3000/list/${id}`, {
+      //     name: house,
+      //     price: 1,
+      //   })
+      //   .then((res) => {
+      //     console.log(res.data);
+      //     console.log("修改成功");
+      //   });
+      //6.局部修改，只改一个属性patcch。
+      const id = 3;
+      axios
+        .patch(`http://localhost:3000/list/${id}`, {
+          name: "祖传三轮车",
+        })
+        .then((res) => {
+          console.log(res.data);
+          console.log("修改成功");
+        });
+    </script>
+  </body>
+</html>

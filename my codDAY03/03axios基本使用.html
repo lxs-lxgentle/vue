@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- $.ajax({}) data type url success error
+    axios是基于原生ajax的封装插件工具
+    需要发送ajax时，引入即可。
+    使用：1下载 npm i axios
+    2引包
+    3发送请求 -->
+    <!-- axios({
+        method: 请求方式
+        url:    请求地址
+        data:    参数对象，在body中传递 post put patch
+        params   参数对象，在url传递  ?xx=xx  get delete
+    }).then(成功的函数).catch(失败的函数) -->
+    <script src="./node_modules/axios/dist/axios.js"></script>
+    <script>
+      // get 获取
+      // post 添加
+      // delete 删除
+      // put 全部修改
+      // patch 局部修改
+      //    1.发送get请求，获得全部数据
+      //   axios({
+      //     method: "get",
+      //     url: "http://localhost:3000/list",
+      //   })
+      //     .then((res) => {
+      //       console.log(res.data);
+      //     })
+      //     .catch((res) => {
+      //       console.log(err);
+      //       alert("当前服务器繁忙");
+      //     });
+      //   axios({
+      //       method:'get',
+      //       url:'http://localhost:3000/list?name_like=车',
+      //   }).then(res =>{
+      //       console.log(res.data)
+      //   })
+      //   axios({
+      //     method: "get",
+      //     url: "http://localhost:3000/list",
+      //     params: { name_like: "车" },
+      //   }).then((res) => console.log(res.data));
+      //   axios 发送post put patch请求
+      // post put patch 参数都在data中
+      // json-server 的要求请求的传输格式json格式，axios默认的请求body的传输格式，就是json格式
+      axios({
+        method: "post",
+        url: "http://localhost:3000/list",
+        data: {
+          name: "棒棒糖",
+          price: "1",
+        },
+      }).then((res) => {
+        console.log(res.data);
+        console.log("添加成功");
+      });
+    </script>
+  </body>
+</html>
